@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KanwaDoRysowania extends JPanel {
-    private JPanel panel;
-    private JFrame frame;
-    private JTextArea textArea;
+    private final JPanel panel;
+    private final JFrame frame;
+    private final JTextArea textArea;
     private String currentShape = "circle"; // Domyślny kształt
     private final List<Shape> shapes = new ArrayList<>(); // Lista przechowująca rysowane kształty
 
@@ -21,7 +21,7 @@ public class KanwaDoRysowania extends JPanel {
         textArea = new JTextArea();
     }
 
-    public void show(){
+    public void showCanva(){
         frame.add(this); // Dodajemy 'KanwaDoRysowania' do okna, bo dziedziczy po JPanel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
@@ -29,7 +29,6 @@ public class KanwaDoRysowania extends JPanel {
         frame.setVisible(true);
 
         panel.setBackground(Color.decode("#DC667C")); // Kolor tła
-        frame.setBackground(Color.decode("#DC667C")); // Kolor tła
 
         textArea.setEditable(false);
         textArea.setBackground(Color.decode("#DC667C"));
@@ -93,7 +92,7 @@ public class KanwaDoRysowania extends JPanel {
     public static void main(final String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new KanwaDoRysowania(args).show();
+                new KanwaDoRysowania(args).showCanva();
             }
         });
     }
