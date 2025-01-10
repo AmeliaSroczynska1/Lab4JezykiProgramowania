@@ -1,3 +1,10 @@
+// Stwórz interfejs z obszarem rysowania (np. JPanel). Dodaj obsługę zdarzeń myszy tak, aby:
+//
+//Po najechaniu kursorem na obszar rysowania, wyświetlano informację w panelu bocznym.
+//Po opuszczeniu obszaru rysowania kursorem, wyświetlano inną informację w panelu bocznym.
+//Po naciśnięciu i zwolnieniu przycisku myszy, wyświetlano komunikat w panelu bocznym.
+//Po użyciu kółka myszy, zmieniano rozmiar wybranej figury na obszarze rysowania.
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
