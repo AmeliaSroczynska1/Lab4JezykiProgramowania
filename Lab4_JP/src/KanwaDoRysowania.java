@@ -1,3 +1,5 @@
+//kanwa do rysowania - dwa rodzaje figur wybierane z klawiatury - pozycja pokazana myszą
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

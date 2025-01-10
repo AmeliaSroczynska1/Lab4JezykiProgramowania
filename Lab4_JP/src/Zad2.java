@@ -1,3 +1,7 @@
+// Stwórz prosty interfejs z obszarem rysowania (np. JPanel). Narysuj kilka prostych figur (np.
+// kwadrat, koło). Dodaj obsługę zdarzeń myszy (MouseListener), tak aby po kliknięciu myszą na figurę
+// można było ją przesunąć.
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

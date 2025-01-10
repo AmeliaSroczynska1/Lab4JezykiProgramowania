@@ -6,16 +6,16 @@ import java.awt.event.*;
 import java.util.Random;
 
 public class UciekajacyPrzycisk {
-    static JFrame frame;
-    static JButton button;
-    static Random random = new Random();
-    static JPanel panel;
+    private JFrame frame;
+    private JButton button;
+    private Random random = new Random();
+    private JPanel panel;
 
     // Konstruktor
     UciekajacyPrzycisk(String[] args) {
         frame = new JFrame("Uciekający przycisk");
         button = new JButton("Złap mnie");
-        panel = new JPanel(null); // null layout, by można było ustawić dokładne pozycje
+        panel = new JPanel();
     }
 
     // Metoda do wyświetlania okna
