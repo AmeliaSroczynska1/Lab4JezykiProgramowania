@@ -12,6 +12,7 @@ public class Zad6 extends JPanel {
     private String currentShape = "circle"; // Domyślny kształt
     private final List<ColoredShape> shapes = new ArrayList<>(); // Lista przechowująca rysowane kształty z kolorami
     private ColoredShape selectedShape = null; // Zaznaczona figura
+    private boolean isCtrlPressed = false; // Flaga do wykrycia stanu klawisza Ctrl
 
     // Konstruktor
     public Zad6(String[] args) {
@@ -90,7 +91,21 @@ public class Zad6 extends JPanel {
                     selectedShape.setColor(Color.GREEN);
                     repaint();
                 }
+                if(e.isControlDown() && selectedShape != null){
+                    isCtrlPressed = true;
+                    repaint(); // Odśwież rysunek, aby pokazać obramowanie
+                }
             }
+
+            @Override
+            public void keyReleased(KeyEvent e){
+                if(selectedShape!=null){
+                selectedShape.setColor(Color.BLUE);
+                if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+                    isCtrlPressed = false;
+                }
+                repaint();
+            }}
         });
 
         // Ustawienie fokusa na panel rysujący
@@ -119,6 +134,13 @@ public class Zad6 extends JPanel {
         // Podświetlenie zaznaczonej figury
         if (selectedShape != null) {
             g2d.setColor(Color.RED);
+            g2d.draw(selectedShape.getShape());
+        }
+
+        // Rysowanie obramowania zaznaczonej figury, jeśli Ctrl jest wciśnięty
+        if (isCtrlPressed && selectedShape != null) {
+            g2d.setColor(Color.WHITE);
+            g2d.setStroke(new BasicStroke(3)); // Grubość obramowania
             g2d.draw(selectedShape.getShape());
         }
     }
