@@ -28,7 +28,7 @@ public class Zad2 extends JPanel {
     }
 
     public void showCanva() {
-        frame.add(this); // Dodajemy 'KanwaDoRysowania' do okna, bo dziedziczy po JPanel
+        frame.add(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setLocationRelativeTo(null); // Ustawienie okna na środku ekranu
@@ -123,7 +123,7 @@ public class Zad2 extends JPanel {
 
         // Ustawienie koloru tła na różowy przed rysowaniem kształtów
         g2d.setColor(Color.decode("#DC667C"));
-        textArea.setText("Kliknij \"1\" dla narysowania kółka, \"2\" dla kwadratu");
+        textArea.setText("Kliknij \"1\" dla narysowania kółka, \"2\" dla kwadratu. \nMożesz do woli przesuwać figury po ich narysowaniu.");
         g2d.fillRect(0, 0, getWidth(), getHeight()); // Rysowanie tła na całym panelu
 
         // Rysowanie wszystkich figur

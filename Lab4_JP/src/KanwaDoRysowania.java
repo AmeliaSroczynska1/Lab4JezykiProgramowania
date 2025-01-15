@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KanwaDoRysowania extends JPanel {
-    private final JPanel panel;
-    private final JFrame frame;
-    private final JTextArea textArea;
+    private JPanel panel;
+    private JFrame frame;
+    private JTextArea textArea;
     private String currentShape = "circle"; // Domyślny kształt
-    private final List<Shape> shapes = new ArrayList<>(); // Lista przechowująca rysowane kształty
+    private List<Shape> shapes = new ArrayList<>(); // Lista przechowująca rysowane kształty
 
     // Konstruktor, ustawienie okna i panelu
     KanwaDoRysowania(String[] args) {
@@ -24,7 +24,7 @@ public class KanwaDoRysowania extends JPanel {
     }
 
     public void showCanva(){
-        frame.add(this); // Dodajemy 'KanwaDoRysowania' do okna, bo dziedziczy po JPanel
+        frame.add(this); // Dodanie panelu do ramki
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setLocationRelativeTo(null); // Ustawienie okna na środku ekranu
@@ -78,8 +78,7 @@ public class KanwaDoRysowania extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // Ustawienie koloru tła na różowy przed rysowaniem kształtów
-        g2d.setColor(Color.decode("#DC667C"));
+        g2d.setColor(Color.decode("#DC667C")); // Ustawienie koloru tła na różowy
         textArea.setText("Kliknij \"1\" dla narysowania kółka, \"2\" dla kwadratu");
         g2d.fillRect(0, 0, getWidth(), getHeight()); // Rysowanie tła na całym panelu
 

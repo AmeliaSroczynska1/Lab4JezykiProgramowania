@@ -13,7 +13,7 @@ public class UciekajacyPrzycisk {
 
     // Konstruktor
     UciekajacyPrzycisk(String[] args) {
-        frame = new JFrame("Uciekający przycisk");
+        frame = new JFrame("Spróbuj złapać przycisk");
         button = new JButton("Złap mnie");
         panel = new JPanel();
     }
@@ -25,7 +25,6 @@ public class UciekajacyPrzycisk {
         frame.setSize(600, 400);
         frame.setVisible(true);
 
-        button.setBackground(Color.decode("#A3A3A3"));
         panel.setBackground(Color.decode("#DC667C"));
 
         button.setBounds(250, 150, 100, 50); // Początkowa pozycja i rozmiar przycisku

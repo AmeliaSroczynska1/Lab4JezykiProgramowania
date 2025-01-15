@@ -35,7 +35,7 @@ public class Zad6 extends JPanel {
         textArea.setBackground(Color.decode("#DC667C"));
         textArea.setFont(new Font("Arial", Font.BOLD, 20));
         textArea.setForeground(Color.WHITE);
-        textArea.setText("Kliknij \"1\" dla narysowania kółka, \"2\" dla kwadratu. \nSpacja dla zmiany koloru figury po najechaniu na nią.");
+        textArea.setText("Kliknij \"1\" dla narysowania kółka, \"2\" dla kwadratu. \nSpacja dla zmiany koloru figury po najechaniu na nią. \nCtrl dla białego obramowania.");
         this.add(textArea);
 
         // Obsługa klawiatury do wyboru kształtów

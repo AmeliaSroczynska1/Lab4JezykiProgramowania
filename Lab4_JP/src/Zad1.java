@@ -7,9 +7,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Zad1 {
-    private final JFrame frame;
-    private final JPanel panel;
-    private final JTextField textField;
+    private JFrame frame;
+    private JPanel panel;
+    private JTextField textField;
 
     Zad1(String[] args) {
         frame = new JFrame("Interfejs z polem tekstowym");

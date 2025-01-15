@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Zad4 extends JPanel {
-    private final JFrame frame;
-    private final List<Shape> shapes = new ArrayList<>(); // Lista przechowująca rysowane kształty
+    private JFrame frame;
+    private List<Shape> shapes = new ArrayList<>(); // Lista przechowująca rysowane kształty
     private Shape selectedShape = null; // Figura aktualnie przeciągana
     private boolean moveRight = false; // Flaga wskazująca kierunek przesuwania
     private Timer moveTimer;
@@ -16,9 +16,11 @@ public class Zad4 extends JPanel {
     public Zad4() {
         // Ustawienia głównego okna
         frame = new JFrame("Kanwa do rysowania");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void showCanva(){
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Zamknięcie okna przy kliknięciu X
         frame.setSize(800, 600);
-        frame.setLocationRelativeTo(null); // Ustawienie okna na środku ekranu
+        frame.setLocationRelativeTo(null);                    // Ustawienie okna na środku ekranu
 
         // Dodanie kształtów do listy
         shapes.add(new Ellipse2D.Double(100, 100, 50, 50));
@@ -79,12 +81,10 @@ public class Zad4 extends JPanel {
                         Rectangle2D rectangle = (Rectangle2D) selectedShape;
                         rectangle.setFrame(bounds);
                     }
-
                     repaint();
                 }
             }
         });
-
         moveTimer.start();
     }
 
@@ -111,8 +111,13 @@ public class Zad4 extends JPanel {
         }
     }
 
-    // Punkt wejścia programu
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(Zad4::new);
+    public static void main(final String[] args) {
+        // Schedule a job for the event-dispatching thread:
+        // creating and showing this application's GUI.
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new Zad4().showCanva();
+            }
+        });
     }
 }

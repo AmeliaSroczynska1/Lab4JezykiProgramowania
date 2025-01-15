@@ -1,5 +1,4 @@
 // Stwórz prosty interfejs z polem tekstowym. Dodaj obsługę zdarzeń klawiatury (KeyListener), aby:
-//
 //Po naciśnięciu klawisza "A" tekst zmieniał kolor na czerwony.
 //Po naciśnięciu klawisza "B" tekst zmieniał kolor na niebieski.
 //Po naciśnięciu klawisza "C" wyczyść pole tekstowe.
@@ -32,7 +31,7 @@ public class Zad3 {
         textField.setBackground(Color.decode("#DC667C"));
         textField.setFont(new Font("Arial", Font.BOLD, 24));     // Ustawienie czcionki
         textField.setForeground(Color.WHITE); // Ustawienie koloru tekstu
-        textField.setText("Kliknij w to pole, aby pokazać współrzędne kliknięcia.");
+        textField.setText("A - czerwony, B - niebieski, C - wyczyść pole tekstowe");
         panel.add(textField);
         frame.setVisible(true);
 
@@ -43,16 +42,21 @@ public class Zad3 {
                     textField.setForeground(Color.RED);
                 } else if (e.getKeyChar() == 'B') {
                     textField.setForeground(Color.BLUE);
-                }
-                else if (e.getKeyChar() == 'C') {
+                } else if (e.getKeyChar() == 'C') {
                     textField.setText("");
+                }
+            }
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == 'A' || e.getKeyChar() == 'B' || e.getKeyChar() == 'C') {
+                    e.consume();
                 }
             }
         });
     }
 
     public static void main(final String[] args) {
-
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new Zad3(args).show();
