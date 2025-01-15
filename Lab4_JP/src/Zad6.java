@@ -1,3 +1,8 @@
+//Opracuj interfejs z obszarem rysowania (np. JPanel). Dodaj obsługę zdarzeń klawiatury tak, aby:
+//Po naciśnięciu klawisza, zmieniał się kształt lub kolor figury na obszarze rysowania.
+//Po zwolnieniu klawisza, powracał do poprzedniego kształtu lub koloru.
+//Po użyciu klawiszy specjalnych, np. Shift lub Ctrl, zmieniały się inne właściwości wybranej figury.
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

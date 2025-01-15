@@ -1,3 +1,8 @@
+// Stwórz interfejs z obszarem rysowania (np. JPanel) i narysuj kilka prostych figur. Dodaj obsługę zdarzeń
+// myszy (MouseListener), tak aby po kliknięciu myszą na figurę można było ją przesunąć. Po kliknięciu na figurę,
+// przesuwaj ją w prawo lub w dół, w zależności od miejsca kliknięcia, zmieniając jej położenie za pomocą timer'a
+// (np. javax.swing.Timer).
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
